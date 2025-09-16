@@ -2,11 +2,18 @@ package com.itsoeh.hhdaniel.portalescolar;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +21,14 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class calificaciones extends Fragment {
+
+    private Spinner spnAsig, spnDocente, spnAlumno;
+
+    private EditText txtNota;
+
+    private Button btnHora;
+
+    private FloatingActionButton fbtGuardar;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,4 +76,67 @@ public class calificaciones extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_calificaciones, container, false);
     }
+
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+
+        super.onViewCreated(view, savedInstanceState);
+        linkComponents(view);
+        setListeners(view);
+
+    }
+
+    private void linkComponents(View view) {
+
+        spnAlumno = view.findViewById(R.id.form_spnalumno);
+        spnDocente = view.findViewById(R.id.form_spndoce);
+        spnAsig = view.findViewById(R.id.form_spnasig);
+        txtNota = view.findViewById(R.id.form_txtcal);
+        btnHora = view.findViewById(R.id.form_btnhora);
+        fbtGuardar = view.findViewById(R.id.form1_fbtguardar);
+
+    }
+
+    private void setListeners(View view) {
+
+        fbtGuardar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                guardar();
+            }
+        });
+
+        btnHora.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            }
+        });
+
+    }
+
+    private void guardar() {
+        String alumno = spnAlumno.getSelectedItem().toString();
+        String docente = spnDocente.getSelectedItem().toString();
+        String asignatura = spnAsig.getSelectedItem().toString();
+        String nota = txtNota.getText().toString();
+        String datos =
+                "*DATOS ASIGNATURA*\n" +
+                        "Alumno: " + alumno + "\n" +
+                        "Docente: " + docente + "\n" +
+                        "Asignatura: " + asignatura + "\n" +
+                        "Calificación: " + nota + "\n" +
+                        "****************";
+
+        CuadroDialogo dialogo = new CuadroDialogo(this.getContext());
+        dialogo.setInfo(datos);
+        limpiarCampos();
+
+    }
+
+    private void limpiarCampos(){
+        spnAlumno.setSelection(0);
+        spnDocente.setSelection(0);
+        spnAsig.setSelection(0);
+        txtNota.setText("");
+    }
+
 }

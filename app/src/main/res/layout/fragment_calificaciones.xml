@@ -51,7 +51,7 @@
                         android:text="ASIGNATURA"
                         style="@style/titulos_peques"/>
                     <Spinner
-                        android:id="@+id/form1_asig"
+                        android:id="@+id/form_spnasig"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:spinnerMode="dropdown"
@@ -73,7 +73,7 @@
                         android:text="DOCENTE"
                         style="@style/titulos_peques"/>
                     <Spinner
-                        android:id="@+id/form1_spndoce"
+                        android:id="@+id/form_spndoce"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:spinnerMode="dropdown"
@@ -95,7 +95,7 @@
                         android:text="ALUMNOS"
                         style="@style/titulos_peques"/>
                     <Spinner
-                        android:id="@+id/form1_spnmunicipio"
+                        android:id="@+id/form_spnalumno"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:spinnerMode="dropdown"
@@ -117,7 +117,7 @@
                         android:text="CALIFICACIÓN"
                         style="@style/titulos_peques"/>
                     <EditText
-                        android:id="@+id/form1_txtmat"
+                        android:id="@+id/form_txtcal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Escriba la nota del alumno"
@@ -137,7 +137,7 @@
                         android:text="Hora de guardado"
                         style="@style/titulos_peques"/>
                     <Button
-                        android:id="@+id/form1_btnhora"
+                        android:id="@+id/form_btnhora"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="HH:MM:SS"
