@@ -1,5 +1,6 @@
 package com.itsoeh.hhdaniel.portalescolar;
 
+import android.app.TimePickerDialog;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,8 +13,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TimePicker;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.Calendar;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -108,6 +112,7 @@ public class calificaciones extends Fragment {
         btnHora.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                clicHora(view);
             }
         });
 
@@ -118,12 +123,15 @@ public class calificaciones extends Fragment {
         String docente = spnDocente.getSelectedItem().toString();
         String asignatura = spnAsig.getSelectedItem().toString();
         String nota = txtNota.getText().toString();
+        String hora = btnHora.getText().toString();
+
         String datos =
                 "*DATOS ASIGNATURA*\n" +
                         "Alumno: " + alumno + "\n" +
                         "Docente: " + docente + "\n" +
                         "Asignatura: " + asignatura + "\n" +
                         "Calificación: " + nota + "\n" +
+                        "Hora de calificado: " + hora + "\n" +
                         "****************";
 
         CuadroDialogo dialogo = new CuadroDialogo(this.getContext());
@@ -139,4 +147,20 @@ public class calificaciones extends Fragment {
         txtNota.setText("");
     }
 
-}
+    private void clicHora(View view){
+
+        final Calendar c = Calendar.getInstance();
+        int hora = c.get(Calendar.HOUR_OF_DAY);
+        int minuto = c.get(Calendar.MINUTE);
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this.getContext(), new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker timePicker, int hora, int minuto) {
+                btnHora.setText(hora + ":" + minuto);
+            }
+        }, hora, minuto, true);
+
+        timePickerDialog.show();
+
+        }
+
+    }
