@@ -23,6 +23,8 @@ import android.widget.ImageView;
  */
 public class splash extends Fragment {
 
+    MediaPlayer sonido;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -60,17 +62,17 @@ public class splash extends Fragment {
         // Inflate the layout for this fragment
         new Handler(Looper.getMainLooper()).postDelayed(() -> {
             if (isAdded()) {
-                NavHostFragment.findNavController(inicio.this)
+                NavHostFragment.findNavController(splash.this)
                         .navigate(R.id.action_splash_to_menu);//fragmen destino
             }
-        }, 5000); // 5000 milisegundos = 5 segundos
+        }, 3000); // 5000 milisegundos = 3 segundos
         return inflater.inflate(R.layout.fragment_splash, container, false);
     }
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ImageView logo = view.findViewById(R.id.logoImage);
-        sonido = MediaPlayer.create(getContext(), R.raw.start);
+        sonido = MediaPlayer.create(getContext(), R.raw.startup);
         sonido.start();
         logo.startAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.fadein));
 

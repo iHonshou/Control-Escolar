@@ -1,12 +1,22 @@
 package com.itsoeh.hhdaniel.portalescolar;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.Calendar;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +24,14 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class estudiantes extends Fragment {
+
+    private EditText txtMatricula, txtNombre, txtApellidoPaterno, txtApellidoMaterno, txtDireccion, txtCorreo, txtTelefono;
+
+    private RadioButton rdbFemenino, rdbMasculino;
+
+    private Button btnFecha;
+
+    private FloatingActionButton fbtGuardar;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,4 +79,114 @@ public class estudiantes extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_estudiantes, container, false);
     }
+
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        linkComponents(view);
+        setListeners(view);
+    }
+
+    private void linkComponents(View view) {
+
+        txtMatricula = view.findViewById(R.id.form1_txtmat);
+        txtNombre = view.findViewById(R.id.form1_txtnom);
+        txtApellidoPaterno = view.findViewById(R.id.form1_txtapp);
+        txtApellidoMaterno = view.findViewById(R.id.form1_txtapm);
+        txtDireccion = view.findViewById(R.id.form1_txtdirec);
+        txtCorreo = view.findViewById(R.id.form1_txtcorreo);
+        txtTelefono = view.findViewById(R.id.form1_txttlf);
+        rdbFemenino = view.findViewById(R.id.form1_rdbfemenino);
+        rdbMasculino = view.findViewById(R.id.form1_rdbmasculino);
+        btnFecha = view.findViewById(R.id.form1_btnfecha);
+        fbtGuardar = view.findViewById(R.id.form1_fbtguardar);
+
+    }
+
+    private void setListeners(View view) {
+
+        btnFecha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickFecha(view);
+            }
+        });
+
+        fbtGuardar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickGuardar(view);
+            }
+        });
+
+    }
+
+    public void clickGuardar(View view) {
+
+        String matricula = txtMatricula.getText().toString();
+        String nombre = txtNombre.getText().toString();
+        String apellidoPaterno = txtApellidoPaterno.getText().toString();
+        String apellidoMaterno = txtApellidoMaterno.getText().toString();
+        String direccion = txtDireccion.getText().toString();
+        String correo = txtCorreo.getText().toString();
+        String fechaNacimiento = btnFecha.getText().toString();
+        String telefono = txtTelefono.getText().toString();
+        String genero = "";
+        if (rdbFemenino.isChecked()) {
+            genero = "Femenino";
+        } else if (rdbMasculino.isChecked()) {
+            genero = "Masculino";
+        }
+
+        String datos =
+                        "*DATOS ALUMNO*\n" +
+                        "Matricula: " + matricula + "\n" +
+                        "Nombre: " + nombre + "\n" +
+                        "Apellido Paterno: " + apellidoPaterno + "\n" +
+                        "Apellido Materno: " + apellidoMaterno + "\n" +
+                        "Fecha de nacimiento: " + fechaNacimiento + "\n" +
+                        "Dirección: " + direccion + "\n" +
+                        "Correo: " + correo + "\n" +
+                        "Teléfono: " + telefono + "\n" +
+                        "Género: " + genero + "\n" +
+                        "****************";
+
+        CuadroDialogo dialogo = new CuadroDialogo(this.getContext());
+        dialogo.setInfo(datos);
+
+        limpiarCampos();
+
+    }
+
+    private void clickFecha(View view) {
+
+        final Calendar calendario = Calendar.getInstance();
+        int year = calendario.get(Calendar.YEAR);
+        int month = calendario.get(Calendar.MONTH);
+        int day = calendario.get(Calendar.DAY_OF_MONTH);
+        DatePickerDialog datePickerDialog = new DatePickerDialog(view.getContext(), new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(android.widget.DatePicker datePicker, int year, int month, int dayOfMonth) {
+                btnFecha.setText(dayOfMonth + "/" + (month + 1) + "/" + year);
+            }
+
+            }, year, month, day);
+            datePickerDialog.show();
+
+    }
+
+    private void limpiarCampos() {
+
+        txtMatricula.setText("");
+        txtNombre.setText("");
+        txtApellidoPaterno.setText("");
+        txtApellidoMaterno.setText("");
+        txtDireccion.setText("");
+        txtCorreo.setText("");
+        txtTelefono.setText("");
+        rdbFemenino.setChecked(false);
+        rdbMasculino.setChecked(false);
+        btnFecha.setText("");
+
+    }
+
 }
