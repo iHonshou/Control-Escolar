@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="negro">#FF000000</color>
+    <color name="blanco">#FFFFFFFF</color>
+    <color name="azul_cielo_suave">#F2F6FF</color>
+    <color name="azul_escolar_pastel">#DDEEFF</color>
+    <color name="verde_menta_educativo">#C1E1DC</color>
+    <color name="gris_pizarra_claro">#E6EAF0</color>
+    <color name="amarillo_resaltador_suave">#FFF9D6</color>
+</resources>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".calificaciones"
+    android:background="@drawable/degradado">
+
+    <!--CAPA 1-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+        <!--ENCABEZADO-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Calificaciones"
+                android:fontFamily="@font/penmanship"
+                android:textSize="38sp"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <!--CUERPO-->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="9"
+            android:scrollbars="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!--PREGUNTA 1-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="5dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="ASIGNATURA"
+                        style="@style/titulos_peques"/>
+                    <Spinner
+                        android:id="@+id/form1_asig"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:spinnerMode="dropdown"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:entries="@array/asignaturas_sistemas"/>
+
+                </LinearLayout>
+
+                <!--PREGUNTA 2-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="5dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="DOCENTE"
+                        style="@style/titulos_peques"/>
+                    <Spinner
+                        android:id="@+id/form1_spndoce"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:spinnerMode="dropdown"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:entries="@array/docentes"/>
+
+                </LinearLayout>
+
+                <!--PREGUNTA 3-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="5dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="ALUMNOS"
+                        style="@style/titulos_peques"/>
+                    <Spinner
+                        android:id="@+id/form1_spnmunicipio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:spinnerMode="dropdown"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:entries="@array/alumnos"/>
+
+                </LinearLayout>
+
+                <!--PREGUNTA 4-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="5dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="CALIFICACIÓN"
+                        style="@style/titulos_peques"/>
+                    <EditText
+                        android:id="@+id/form1_txtmat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Escriba la nota del alumno"
+                        style="@style/titulos_peques"/>
+
+                </LinearLayout>
+
+                <!--PREGUNTA 9-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="5dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Hora de guardado"
+                        style="@style/titulos_peques"/>
+                    <Button
+                        android:id="@+id/form1_btnhora"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="HH:MM:SS"
+                        android:layout_margin="20dp"
+                        android:backgroundTint="@color/azul_cielo_suave"
+                        style="@style/titulos_peques">
+                    </Button>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+    </LinearLayout>
+    <!--CAPA 3-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="9"/>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/form1_fbtguardar"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:src="@drawable/guardar"
+            android:layout_weight="1"
+            android:layout_gravity="right"
+            android:layout_margin="30dp"
+            android:backgroundTint="@color/amarillo_resaltador_suave">
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+    </LinearLayout>
+
+</FrameLayout>

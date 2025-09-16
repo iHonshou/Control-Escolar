@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">Portal Escolar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="verision_app">Version 1.0</string>
+    <string-array name="grado">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+    </string-array>
+
+    <string-array name="carrera">
+        <item>Ingeniería en Sistemas Computacionales</item>
+        <item>Ingeniería Industrial</item>
+        <item>Ingeniería Electrónica</item>
+        <item>Ingeniería Civil</item>
+        <item>Ingeniería Mecatrónica</item>
+        <item>Administración de Empresas</item>
+        <item>Contaduría Pública</item>
+        <item>Arquitectura</item>
+        <item>Diseño Gráfico</item>
+        <item>Educación</item>
+        <item>Derecho</item>
+        <item>Psicología</item>
+        <item>Agroindustria</item>
+    </string-array>
+
+    <string-array name="docentes">
+        <item>Prof. Ana Martínez</item>
+        <item>Ing. Luis Torres</item>
+        <item>Mtra. Carmen Ríos</item>
+        <item>Dr. Jorge Ramírez</item>
+        <item>Lic. Patricia Gómez</item>
+        <item>Prof. Eduardo Sánchez</item>
+        <item>Ing. Mariana López</item>
+    </string-array>
+
+    <string-array name="alumnos">
+        <item>Daniel Hernández</item>
+        <item>Valeria Cruz</item>
+        <item>José Luis Pérez</item>
+        <item>María Fernanda Soto</item>
+        <item>Kevin Morales</item>
+        <item>Andrea Ramírez</item>
+        <item>Emilio Vargas</item>
+    </string-array>
+
+    <string-array name="asignaturas_sistemas">
+        <item>Programación Estructurada</item>
+        <item>Programación Orientada a Objetos</item>
+        <item>Estructura de Datos</item>
+        <item>Base de Datos</item>
+        <item>Sistemas Operativos</item>
+        <item>Redes de Computadoras</item>
+        <item>Ingeniería de Software</item>
+        <item>Desarrollo de Aplicaciones Móviles</item>
+        <item>Seguridad Informática</item>
+        <item>Inteligencia Artificial</item>
+        <item>Arquitectura de Computadoras</item>
+        <item>Algoritmos Avanzados</item>
+        <item>Administración de Proyectos de TI</item>
+    </string-array>
+
+
+</resources>

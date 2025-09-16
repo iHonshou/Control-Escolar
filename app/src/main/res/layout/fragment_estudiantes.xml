@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".estudiantes"
+    android:background="@drawable/degradado">
+
+    <!--CAPA 1-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+        <!--ENCABEZADO-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Estudiantes"
+                android:fontFamily="@font/penmanship"
+                android:textSize="38sp"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <!--CUERPO-->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="9"
+            android:scrollbars="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!--PREGUNTA 1-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="5dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="MATRICULA"
+                        style="@style/titulos_peques"/>
+                    <EditText
+                        android:id="@+id/form1_txtmat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Escribe tu matricula"
+                        style="@style/titulos_peques"/>
+
+                </LinearLayout>
+
+                <!--PREGUNTA 2-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="5dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="NOMBRE"
+                        style="@style/titulos_peques"/>
+                    <EditText
+                        android:id="@+id/form1_txtnom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Escribe tu nombre"
+                        style="@style/titulos_peques"/>
+
+                </LinearLayout>
+
+                <!--PREGUNTA 3-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="5dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="APELLIDO PATERNO"
+                        style="@style/titulos_peques"/>
+                    <EditText
+                        android:id="@+id/form1_txtapp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Escribe tu apellido paterno"
+                        style="@style/titulos_peques"/>
+
+                </LinearLayout>
+
+                <!--PREGUNTA 4-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="5dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="APELLIDO MATERNO"
+                        style="@style/titulos_peques"/>
+                    <EditText
+                        android:id="@+id/form1_txtapm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Escribe tu apellido materno"
+                        style="@style/titulos_peques"/>
+
+                </LinearLayout>
+
+                <!--PREGUNTA 5-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="GENERO"
+                        style="@style/titulos_peques"/>
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+                        <RadioButton
+                            android:id="@+id/form1_rdbfemenino"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Femenino"
+                            style="@style/titulos_peques"/>
+
+                        <RadioButton
+                            android:id="@+id/form1_rdbmasculino"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Masculino"
+                            style="@style/titulos_peques"/>
+
+                    </RadioGroup>
+
+
+                </LinearLayout>
+
+                <!--PREGUNTA 4-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="5dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="DIRECCIÓN"
+                        style="@style/titulos_peques"/>
+                    <EditText
+                        android:id="@+id/form1_txtdirec"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Escribe tu dirección"
+                        style="@style/titulos_peques"/>
+
+                </LinearLayout>
+
+                <!--PREGUNTA 4-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="5dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="CORREO"
+                        style="@style/titulos_peques"/>
+                    <EditText
+                        android:id="@+id/form1_txtcorreo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Escribe tu correo institucional"
+                        style="@style/titulos_peques"/>
+
+                </LinearLayout>
+
+                <!--PREGUNTA 4-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="5dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="TELEFONO"
+                        style="@style/titulos_peques"/>
+                    <EditText
+                        android:id="@+id/form1_txttlf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Escribe tu número telefónico"
+                        style="@style/titulos_peques"/>
+
+                </LinearLayout>
+
+                <!--PREGUNTA 5-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="5dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="FECHA DE NACIMIENTO"
+                        style="@style/titulos_peques"/>
+                    <Button
+                        android:id="@+id/form1_btnfecha"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="dd/mm/aaaa"
+                        android:layout_margin="20dp"
+                        android:backgroundTint="@color/azul_cielo_suave"
+                        style="@style/titulos_peques">
+                    </Button>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+    </LinearLayout>
+    <!--CAPA 3-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="9"/>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/form1_fbtguardar"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:src="@drawable/guardar"
+            android:layout_weight="1"
+            android:layout_gravity="right"
+            android:layout_margin="30dp"
+            android:backgroundTint="@color/amarillo_resaltador_suave">
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+    </LinearLayout>
+
+</FrameLayout>
