@@ -22,6 +22,7 @@
         tools:layout="@layout/fragment_asignaturas" >
         <action
             android:id="@+id/action_asignaturas_to_menu"
+            app:enterAnim="@anim/barridosalida"
             app:destination="@id/menu" />
     </fragment>
     <fragment
@@ -52,6 +53,7 @@
         tools:layout="@layout/fragment_estudiantes" >
         <action
             android:id="@+id/action_estudiantes_to_menu"
+            app:enterAnim="@anim/barridosalida"
             app:destination="@id/menu" />
     </fragment>
     <fragment
@@ -61,6 +63,7 @@
         tools:layout="@layout/fragment_calificaciones" >
         <action
             android:id="@+id/action_calificaciones_to_menu"
+            app:enterAnim="@anim/barridosalida"
             app:destination="@id/menu" />
     </fragment>
 </navigation>

@@ -5,7 +5,10 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,6 +35,10 @@ public class estudiantes extends Fragment {
     private Button btnFecha;
 
     private FloatingActionButton fbtGuardar;
+
+    private NavController navController;
+
+    private CardView btnAtras;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -99,6 +106,8 @@ public class estudiantes extends Fragment {
         rdbMasculino = view.findViewById(R.id.form1_rdbmasculino);
         btnFecha = view.findViewById(R.id.form1_btnfecha);
         fbtGuardar = view.findViewById(R.id.form1_fbtguardar);
+        btnAtras = view.findViewById(R.id.cardRegresar);
+        navController = Navigation.findNavController(view);
 
     }
 
@@ -115,6 +124,13 @@ public class estudiantes extends Fragment {
             @Override
             public void onClick(View view) {
                 clickGuardar(view);
+            }
+        });
+
+        btnAtras.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                atras(view);
             }
         });
 
@@ -187,6 +203,10 @@ public class estudiantes extends Fragment {
         rdbMasculino.setChecked(false);
         btnFecha.setText("");
 
+    }
+
+    private void atras(View view){
+        navController.navigate(R.id.action_estudiantes_to_menu);
     }
 
 }

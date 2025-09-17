@@ -4,7 +4,10 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,6 +30,10 @@ public class asignaturas extends Fragment {
     private Spinner spnGrado, spnCarrera;
     private RadioButton rdbCurricular, rdbOptativa, rdbExtracurricular;
     private FloatingActionButton fbtGuardar;
+
+    private NavController navController;
+
+    private CardView btnAtras;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -93,6 +100,8 @@ public class asignaturas extends Fragment {
         rdbOptativa = view.findViewById(R.id.form1_rdbopt);
         rdbExtracurricular = view.findViewById(R.id.form1_rdbextra);
         fbtGuardar = view.findViewById(R.id.form1_fbtguardar);
+        btnAtras = view.findViewById(R.id.cardRegresar);
+        navController = Navigation.findNavController(view);
 
     }
 
@@ -105,7 +114,14 @@ public class asignaturas extends Fragment {
             }
         });
 
-    }
+        btnAtras.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                atras(view);
+            }
+        });
+        }
+
 
     private void guardarAsignatura(View view) {
 
@@ -134,6 +150,10 @@ public class asignaturas extends Fragment {
             dialogo.setInfo(datos);
             limpiarCampos();
 
+        }
+
+        private void atras(View view){
+            navController.navigate(R.id.action_asignaturas_to_menu);
         }
 
     private void limpiarCampos() {
